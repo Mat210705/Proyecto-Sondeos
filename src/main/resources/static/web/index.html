@@ -15,25 +15,26 @@
        <nav>
         <ul class="nav justify-content-center"> 
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Mis Libros</a>
+              <a class="nav-link link-danger" href="index.html">Mis Libros</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="crearLibros.html">Crear Libros</a>
+              <a class="nav-link link-danger" href="crearLibros.html">Crear Libros</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="editarLibros.html">Editar Libros</a>
+                <a class="nav-link link-danger" href="editarLibros.html">Editar Libros</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="eliminarLibros.html">Eliminar Libros</a>
+                <a class="nav-link link-danger" href="eliminarLibros.html">Eliminar Libros</a>
             </li>
           </ul>
         </nav>
         <main id="app">
-            <div>
+            <div class="misLibros">
                 <div v-for="libro in libros"  class="card m-2" style="width: 18rem;">
                     <img src="./img/imagen-card.jpg" class="card-img-top" alt="imagen de libro abierto">
                     <div class="card-body">
                     <ul>
+                        <li>Id: {{libro.id}}</li>
                         <li>Titulo: {{libro.titulo}}</li>
                         <li>Autor: {{libro.autor}}</li>
                         <li>Precio: {{libro.precio}}</li>

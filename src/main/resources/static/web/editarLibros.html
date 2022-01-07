@@ -13,35 +13,45 @@
            <h1>Mis Libros</h1>
         </header>
        <nav>
-        <nav>
             <ul class="nav justify-content-center"> 
-                <li class="nav-item">
-                  <a class="nav-link" href="index.html">Mis Libros</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="crearLibros.html">Crear Libros</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="editarLibros.html">Editar Libros</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="eliminarLibros.html">Eliminar Libros</a>
-                </li>
-                
-              </ul>
-            </nav>
+              <li class="nav-item">
+                <a class="nav-link link-danger" href="index.html">Mis Libros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link link-danger" href="crearLibros.html">Crear Libros</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link link-danger" href="editarLibros.html">Editar Libros</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link link-danger" href="eliminarLibros.html">Eliminar Libros</a>
+              </li>
+            </ul>
         </nav>
         <main id="app">
            
-            <div>
+            <div class="form">
                 <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                  <label for="exampleFormControlInput0" class="form-label">Agregar Id del Libro a Editar</label>
+                  <input type="text" class="form-control" v-model="id" id="exampleFormControlInput0" placeholder="Agregar el Id">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Agregar Titulo</label>
+                    <input type="text" class="form-control" v-model="titulo" id="exampleFormControlInput1" placeholder="Agregar Titulo">
                   </div>
                   <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <label for="exampleFormControlTextarea2" class="form-label">Agregar Autor</label>
+                    <textarea class="form-control" v-model="autor" id="exampleFormControlTextarea2" placeholder="Agregar Autor"></textarea>
                   </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlTextarea3" class="form-label">Agregar Precio</label>
+                    <textarea class="form-control" v-model="precio" id="exampleFormControlTextarea3" placeholder="Agregar Precio"></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlTextarea4" class="form-label">Agregar Fecha de Lanzamiento</label>
+                    <textarea class="form-control" v-model="fechaDeLanzamiento" id="exampleFormControlTextarea4" placeholder="Agregar Fecha de Lanzamiento"></textarea>
+                  </div>
+                  <button @click="editarLibro" type="button" class="btn-Enviar btn-outline-success btn-sm">Aplicar</button>
             </div>
                          
         </main>

@@ -2,6 +2,7 @@ const app = Vue.createApp({
     data(){
         return{
            libros:[],
+           id:"",
            titulo:"",
            autor:"",
            precio:"",
@@ -27,15 +28,46 @@ const app = Vue.createApp({
                     "fechaDeLanzamiento": this.fechaDeLanzamiento,
                 },{headers:{'content-type':'application/json'}})
                 .then(res => swal(
-                    'Prestamo Otorgado con éxito!',
-                    'Puedes chequear tu cuenta.',
+                    'Libro creado con exito!',
+                    'Puedes chequear tus libros.',
                     'success',), setTimeout(() => {
                         location.reload();
                     }, 3000))
-                            
-                .catch(res => console.log(res.response.data))
+                    .catch(res => swal("Intente nuevamente", "error",), setTimeout(() => {
+                        location.reload();
+                    }, 3000))  
         },
-        
+        editarLibro(){
+           axios.put('/api/libros/update',
+                {
+                    "id": this.id,
+                    "titulo": this.titulo,
+                    "autor": this.autor,
+                    "precio": this.precio,
+                    "fechaDeLanzamiento": this.fechaDeLanzamiento,
+                },{headers:{'content-type':'application/json'}})
+                .then(res => swal(
+                    'Libro editado con exito!',
+                    'Puedes chequear tus libros.',
+                    'success',), setTimeout(() => {
+                        location.reload();
+                    }, 3000))
+                    .catch(res => swal("Intente nuevamente", "error",), setTimeout(() => {
+                        location.reload();
+                    }, 3000))  
+        },
+        eliminarLibro(){
+            axios.delete(`/api/libros/delete?titulo=${this.titulo}`,{ headers: { 'content-type': 'application/x-www-form-urlencoded' } })
+            .then(res => swal(
+                'Libro Eliminado con exito',
+                 'Puedes chequear tus Libros.',
+                 'success',), setTimeout(() => {
+                  location.reload();
+                }, 3000))                           
+            .catch(res => swal("Intente nuevamente", "error",), setTimeout(() => {
+                location.reload();
+            }, 3000))    
+        }
         
     
 },

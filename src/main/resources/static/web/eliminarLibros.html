@@ -13,36 +13,30 @@
            <h1>Mis Libros</h1>
         </header>
        <nav>
-        <nav>
-            <ul class="nav justify-content-center"> 
-                <li class="nav-item">
-                  <a class="nav-link" href="index.html">Mis Libros</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="crearLibros.html">Crear Libros</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="editarLibros.html">Editar Libros</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="eliminarLibros.html">Eliminar Libros</a>
-                </li>
-                
-              </ul>
-            </nav>
+          <ul class="nav justify-content-center"> 
+            <li class="nav-item">
+              <a class="nav-link link-danger" href="index.html">Mis Libros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-danger" href="crearLibros.html">Crear Libros</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link link-danger" href="editarLibros.html">Editar Libros</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link link-danger" href="eliminarLibros.html">Eliminar Libros</a>
+            </li>
+          </ul>
         </nav>
         <main id="app">
             
-            <div>
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                  </div>
-                  <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                  </div>
-            </div>              
+          <div class="form">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Agregar Titulo del Libro a eliminar</label>
+                <input type="text" class="form-control" v-model="titulo" id="exampleFormControlInput1" placeholder="Agregar Titulo">
+              </div>
+              <button @click="eliminarLibro" type="button" class="btn-Enviar btn-outline-success btn-sm">Aplicar</button>
+        </div>             
         </main>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         <script src="https://unpkg.com/vue@next"></script>
